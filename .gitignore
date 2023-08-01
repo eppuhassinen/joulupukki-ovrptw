@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# Calculated routes
+routes.csv

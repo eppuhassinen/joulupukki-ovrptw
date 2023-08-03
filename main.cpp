@@ -309,9 +309,9 @@ float Run(int r_0, float pheromone_init, int number_of_ants, float pheromone_par
                                      r_0, pheromone_param, heuristic_param, visited_customers, current_time, speed, rng, w1);
                         for (int depot = 0; depot < depots.size(); depot++)
                         {
-                            if (depots[depot].DistanceTo(customers[j]) < depots[i].DistanceTo(customers[j]))
+                            if (depots[depot].DistanceTo(customers[j]) < depots[route[n_of_vehicle][0]].DistanceTo(customers[j]))
                             {
-                                route[n_of_vehicle][0] = depot;
+                                route[n_of_vehicle][0] = depot; 
                             }
                         }
                     }
@@ -404,7 +404,8 @@ float Run(int r_0, float pheromone_init, int number_of_ants, float pheromone_par
         counter++;
     }
 
-    std::cout << "finished. Length: " << best_length << endl;
+    std::cout << "finished. Length: " << best_length;
+    std::cout << " vehicle counter: " << best_route.size() << endl;
 
     savePathsToCSV(best_route);
     return best_length;
